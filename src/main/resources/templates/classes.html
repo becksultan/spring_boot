@@ -1,18 +1,19 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Journal: Index</title>
+    <title>Journal: Classes</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
-<body>
 <header>
     <div class="navbar">
         <a href="/">Home</a>
         <a href="/classes">Classes</a>
-        <a href="/form">Form</a>
     </div>
 </header>
-<p>Get your greeting <a href="/greeting">here</a></p>
+<body>
+<ul th:each="student: ${students}">
+    <li th:text="${student}"></li>
+</ul>
 </body>
 </html>
